@@ -11,12 +11,12 @@ output.elasticsearch:
   enabled: ${ES_JOURNALBEAT_OUTPUT_ELASTICSEARCH:false}
   ssl.enabled: ${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_SSL:false}
   hosts: ${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_HOSTS:"elasticsearch:9200"}
-  index: "${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_INDEX:journalbeat}-%{[beat.version]}-%{+yyyy.MM.dd}"
+  index: "${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_INDEX:journalbeat}"
   username: "${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_USERNAME}"
   password: "${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_PASSWORD}"
 
-setup.template.name: "${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_INDEX:journalbeat}-%{[beat.version]}"
-setup.template.pattern: "${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_INDEX:journalbeat}-%{[beat.version]}-*"
+setup.template.name: "${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_INDEX:journalbeat}"
+setup.template.pattern: "${ES_JOURNALBEAT_OUTPUT_CONFIG_ELASTICSEARCH_INDEX:journalbeat}"
 
 setup.kibana.host: ${ES_JOURNALBEAT_OUTPUT_CONFIG_KIBANA_HOST:"kibana:5601"}
 setup.dashboards.enabled: ${ES_JOURNALBEAT_OUTPUT_CONFIG_KIBANA_DASHBOARDS:false}
@@ -24,7 +24,7 @@ setup.dashboards.enabled: ${ES_JOURNALBEAT_OUTPUT_CONFIG_KIBANA_DASHBOARDS:false
 output.logstash:
   enabled: ${ES_JOURNALBEAT_OUTPUT_LOGSTASH:false}
   hosts: ${ES_JOURNALBEAT_OUTPUT_CONFIG_LOGSTASH_HOSTS:"logstash:5044"}
-  index: "${ES_JOURNALBEAT_OUTPUT_CONFIG_LOGSTASH_INDEX:'journalbeat'}-%{[beat.version]}-%{+yyyy.MM.dd}"
+  index: "${ES_JOURNALBEAT_OUTPUT_CONFIG_LOGSTASH_INDEX:'journalbeat'}"
 
 output.kafka:
   enabled: ${ES_JOURNALBEAT_OUTPUT_KAFKA:false}
